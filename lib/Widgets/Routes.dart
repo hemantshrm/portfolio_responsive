@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 class Routes {
   static const String home = "/";
+  static const String resume = "resume";
 
   static Route<T> fadeThrough<T>(RouteSettings settings, WidgetBuilder page,
       {int duration = 300}) {

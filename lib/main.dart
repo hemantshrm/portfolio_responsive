@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_responsive/Widgets/Routes.dart';
 import 'package:portfolio_responsive/screens/Main_screen.dart';
+import 'package:portfolio_responsive/screens/resume_Screen/resume_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
           switch (settings.name) {
             case Routes.home:
               return MainScreen();
+              break;
+            case Routes.resume:
+              return ResumeScreen();
               break;
             default:
               return null;

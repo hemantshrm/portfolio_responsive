@@ -2,47 +2,58 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_responsive/constants.dart';
 
-class DropContText extends StatelessWidget {
+class BottomItems extends StatelessWidget {
   final String mainText, subText;
   final Function onClick;
   double width;
-  DropContText({this.subText, this.mainText, this.width, this.onClick});
+
+  final Icon circleIcon;
+  BottomItems(
+      {this.subText, this.mainText, this.width, this.onClick, this.circleIcon});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        Text(
-          mainText,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w900,
-            fontSize: 19,
-          ),
+        CircleAvatar(
+            backgroundColor: Colors.white, radius: 20, child: circleIcon),
+        SizedBox(
+          width: 20,
         ),
-        GestureDetector(
-          onTap: onClick,
-          child: Text(
-            subText,
-            style: TextStyle(fontSize: 15, color: Colors.white),
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              mainText,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+                fontSize: 19,
+              ),
+            ),
+            GestureDetector(
+              onTap: onClick,
+              child: Text(
+                subText,
+                style: TextStyle(fontSize: 15, color: Colors.white),
+              ),
+            ),
+          ],
         ),
       ],
     );
   }
 }
 
-class CircleIcon extends StatelessWidget {
-  CircleIcon({this.circleIcon});
-  final Icon circleIcon;
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-        backgroundColor: Colors.white, radius: 20, child: circleIcon);
-  }
-}
+// class CircleIcon extends StatelessWidget {
+//   CircleIcon(this.circleIcon, this.color);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//   }
+// }
 
 // -------------------------------UpperBUTTONS------------------------------------//
 
@@ -74,7 +85,7 @@ class RightSideRow extends StatelessWidget {
       children: [
         Text("Hello,",
             style: GoogleFonts.noticiaText(
-                color: Color(0xff4d4d4d),
+                color: Constants.desktopTextcolor,
                 fontSize: 100,
                 letterSpacing: 3,
                 fontWeight: FontWeight.w800)),
@@ -83,7 +94,7 @@ class RightSideRow extends StatelessWidget {
         ),
         Text("a bit about me:",
             style: GoogleFonts.noticiaText(
-                color: Color(0xff4d4d4d),
+                color: Constants.desktopTextcolor,
                 fontSize: 50,
                 letterSpacing: 3,
                 fontWeight: FontWeight.w400)),

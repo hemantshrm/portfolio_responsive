@@ -32,15 +32,14 @@ class BottomDesktopTab extends StatelessWidget {
       height: Get.height / 5,
       width: double.infinity,
       child: FittedBox(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        fit: BoxFit.none,
+        child: Wrap(
+          spacing: 20,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleIcon(circleIcon: Icon(Icons.call)),
-            SizedBox(
-              width: 20,
-            ),
-            DropContText(
+            BottomItems(
+              circleIcon: Icon(Icons.call),
               mainText: 'Call',
               subText: '99899899899',
               width: Get.width,
@@ -51,11 +50,8 @@ class BottomDesktopTab extends StatelessWidget {
             SizedBox(
               width: 100,
             ),
-            CircleIcon(circleIcon: Icon(Icons.mail_outline_outlined)),
-            SizedBox(
-              width: 20,
-            ),
-            DropContText(
+            BottomItems(
+                circleIcon: Icon(Icons.mail_outline_outlined),
                 mainText: 'Contact',
                 subText: 'Flutter.dev',
                 width: Get.width,
@@ -65,11 +61,8 @@ class BottomDesktopTab extends StatelessWidget {
             SizedBox(
               width: 100,
             ),
-            CircleIcon(circleIcon: Icon(Icons.add)),
-            SizedBox(
-              width: 20,
-            ),
-            DropContText(
+            BottomItems(
+                circleIcon: Icon(Icons.add),
                 mainText: 'Follow me',
                 subText: '',
                 width: Get.width,
@@ -77,11 +70,8 @@ class BottomDesktopTab extends StatelessWidget {
             SizedBox(
               width: 100,
             ),
-            CircleIcon(circleIcon: Icon(Icons.copyright_outlined)),
-            SizedBox(
-              width: 20,
-            ),
-            DropContText(
+            BottomItems(
+                circleIcon: Icon(Icons.copyright_outlined),
                 mainText: '© 2021 by Hemant.',
                 subText: 'Proudly created with Flutter',
                 width: Get.width,

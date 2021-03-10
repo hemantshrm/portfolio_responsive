@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_responsive/Widgets/CircleButtonRow.dart';
 import 'package:portfolio_responsive/Widgets/PorfoI_image.dart';
 import 'package:portfolio_responsive/Widgets/bioText.dart';
+import 'package:portfolio_responsive/constants.dart';
 
 class BodyMobile extends StatelessWidget {
   @override
@@ -13,21 +14,11 @@ class BodyMobile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Hello,",
-                style: GoogleFonts.noticiaText(
-                    color: Colors.black,
-                    fontSize: 90,
-                    letterSpacing: 3,
-                    fontWeight: FontWeight.w900)),
+            Text("Hello,", style: desktopBodyText),
             SizedBox(
               height: 2,
             ),
-            Text("a bit about me:",
-                style: GoogleFonts.noticiaText(
-                    color: Colors.black,
-                    fontSize: 40,
-                    letterSpacing: 3,
-                    fontWeight: FontWeight.w700)),
+            Text("a bit about me:", style: desktopBodyText2),
             SizedBox(
               height: 30,
             ),

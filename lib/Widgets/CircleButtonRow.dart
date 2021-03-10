@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_responsive/Widgets/Routes.dart';
 
 class CircleButtonRow extends StatelessWidget {
   const CircleButtonRow();
@@ -9,7 +10,9 @@ class CircleButtonRow extends StatelessWidget {
       spacing: 20,
       children: [
         CircleWidgets(
-          onpress: () {},
+          onpress: () {
+            Navigator.pushNamed(context, Routes.resume);
+          },
           colour: Color(0xffE83556),
           text: 'My Resume',
           radii: 70,
