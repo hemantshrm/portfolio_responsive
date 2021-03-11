@@ -2,27 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_responsive/Widgets/ui_lements.dart';
 import 'package:portfolio_responsive/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BottomMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // var phone = '965400928';
+    var _phone = '965400928';
 
-    // launchURL() async {
-    //   const url = 'https://flutter.dev';
-    //   if (await canLaunch(url)) {
-    //     await launch(url);
-    //   } else {
-    //     throw 'Could not launch $url';
-    //   }
-    // }
-    //
-    // Future<void> makePhoneCall(String url) async {
-    //   if (await canLaunch(url)) {
-    //     await launch(url);
-    //   } else {
-    //     throw 'Could not launch $url';
-    //   }
+    _launchURL() async {
+      const url = 'https://flutter.dev';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
+
+    Future<void> _makePhoneCall(String url) async {
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
 
     return Container(
       color: Constants.BottomBar_Color,
@@ -40,14 +42,18 @@ class BottomMobile extends StatelessWidget {
             mainText: 'Call',
             subText: '99899899899',
             width: Get.width,
-            onClick: () {},
+            onClick: () {
+              _makePhoneCall('tel:$_phone');
+            },
           ),
           BottomItems(
               circleIcon: Icon(Icons.mail_outline_outlined),
               mainText: 'Contact',
               subText: 'Flutter.dev',
               width: Get.width,
-              onClick: () {}),
+              onClick: () {
+                _launchURL();
+              }),
           BottomItems(
               circleIcon: Icon(Icons.add),
               mainText: 'Follow me',

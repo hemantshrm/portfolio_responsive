@@ -4,7 +4,7 @@ import 'package:portfolio_responsive/Widgets/ui_lements.dart';
 import 'package:portfolio_responsive/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class BottomDesktopTab extends StatelessWidget {
+class BottomTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _phone = '965400928';
@@ -34,7 +34,9 @@ class BottomDesktopTab extends StatelessWidget {
       child: FittedBox(
         fit: BoxFit.none,
         child: Wrap(
-          spacing: 20,
+          spacing: 15,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             BottomItems(
               circleIcon: Icon(Icons.call),
@@ -45,9 +47,6 @@ class BottomDesktopTab extends StatelessWidget {
                 _makePhoneCall('tel:$_phone');
               },
             ),
-            SizedBox(
-              width: 100,
-            ),
             BottomItems(
                 circleIcon: Icon(Icons.mail_outline_outlined),
                 mainText: 'Contact',
@@ -56,18 +55,12 @@ class BottomDesktopTab extends StatelessWidget {
                 onClick: () {
                   _launchURL();
                 }),
-            SizedBox(
-              width: 100,
-            ),
             BottomItems(
                 circleIcon: Icon(Icons.add),
                 mainText: 'Follow me',
                 subText: '',
                 width: Get.width,
                 onClick: () {}),
-            SizedBox(
-              width: 100,
-            ),
             BottomItems(
                 circleIcon: Icon(Icons.copyright_outlined),
                 mainText: '© 2021 by Hemant.',
